@@ -1,0 +1,92 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "studiai: Install Dependencies",
+      "command": "pnpm",
+      "args": [
+        "install"
+      ],
+      "group": "build",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "type": "shell",
+      "label": "studiai: Start Development",
+      "command": "pnpm",
+      "args": [
+        "dev"
+      ],
+      "group": "build",
+      "isBackground": true,
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": {
+        "owner": "typescript",
+        "source": "ts",
+        "applyTo": "closedDocuments",
+        "fileLocation": [
+          "relative",
+          "${workspaceFolder}"
+        ],
+        "pattern": {
+          "regexp": "\\\\b(ERROR|WARNING|INFO)\\\\b",
+          "severity": 1
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".*server.*started.*",
+          "endsPattern": ".*compiled.*successfully.*"
+        }
+      }
+    },
+    {
+      "type": "shell",
+      "label": "studiai: Build Production",
+      "command": "pnpm",
+      "args": [
+        "build"
+      ],
+      "group": "build",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [
+        "$tsc"
+      ]
+    },
+    {
+      "type": "shell",
+      "label": "studiai: Run Tests",
+      "command": "pnpm",
+      "args": [
+        "test"
+      ],
+      "group": "test",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "type": "shell",
+      "label": "studiai: Type Check",
+      "command": "pnpm",
+      "args": [
+        "type-check"
+      ],
+      "group": "build",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [
+        "$tsc"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "StudiAI",
+  "description": "AI Education Platform for Interactive Learning and Course Management",
+  "version": "1.0.0",
+  "type": "service",
+  "priority": 3,
+  "domain": "studiai.ro",
+  "serviceType": "education",
+  "port": 3001,
+  "framework": "next.js",
+  "language": "typescript",
+  "architecture": {
+    "type": "spa",
+    "framework": "Next.js 14",
+    "styling": "Tailwind CSS",
+    "database": "Firestore",
+    "hosting": "Vercel"
+  },
+  "aiCapabilities": {
+    "memory": true,
+    "reasoning": true,
+    "planning": true,
+    "codeGeneration": false,
+    "contentGeneration": true,
+    "personalization": true
+  },
+  "dependencies": ["memorai", "logai"],
+  "relatedServices": ["memorai", "logai", "codai"],
+  "developmentStatus": "active-development",
+  "features": [
+    "Interactive Learning Platform",
+    "Course Management System",
+    "AI-Powered Content Generation",
+    "Student Progress Tracking",
+    "Firestore Integration"
+  ],
+  "lastUpdated": "2025-06-23T18:30:00.000Z",
+  "owner": "codai-ecosystem",
+  "repository": "https://github.com/codai-ecosystem/studiai",
+  "documentation": "docs/studiai/README.md",
+  "deployment": {
+    "production": "https://studiai.ro",
+    "staging": "https://staging.studiai.ro",
+    "development": "http://localhost:3001"
+  }
+}
